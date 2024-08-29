@@ -71,13 +71,56 @@ const miVariable = function () {
   return 'La función está asignada a "miVariable"'
 }
 
-const porciones = function(ingrediente, comensales, unidadMedida) {
+const porcionarIngrediente = function(ingrediente, comensales, unidadMedida) {
   return `Necesitas ${comensales} ${unidadMedida} de ${ingrediente}`
 }
 
 /**
  * Arrow Function
+ * (anonimas)
+ * (): argumentos
+ * =>: regla de escritura
+ * {}: cuerpo de la función
  */
-const preparacionPorotos = () => {
+const preparacionPorotos = comensales => {
+  let ingredientes = [
+    'Porotos',
+    'Zapallo',
+    'Cebolla',
+    'Ajo',
+    'Aji Color',
+    'Sal',
+    'Fideos',
+    'Longaniza',
+    'Agua',
+    'Pimienta',
+    'Comino'
+  ]
 
+  console.log("Para cocinar los mejores porotos del universo, debes conseguir los siguientes ingredientes: ...")
+  
+  /** Porcionamos ingredientes */
+  // let indice = 0
+  // while(indice < ingredientes.length) {
+  //   console.log(porcionarIngrediente(ingredientes[indice], comensales, 'kilos'))
+
+  //   indice = indice + 1
+  // }
+  for(let ingrediente of ingredientes) {
+    console.log(porcionarIngrediente(ingredientes[indice], comensales, 'kilos'))
+  }
 }
+
+/**
+ * 
+ * (): argumentos, sólo si no trae argumentos, o si tiene más de un argumento
+ * {}: cuerpo, sólo si es más de una línea y si no se usa, asume que retorna algo 
+ *      en caso de usar el cuerpo y querer que retorne algo es necario usar
+ *      la palabra clave return
+ *      en caso de no uso, será un función con efecto secundario
+ */
+const sumar = (a, b) => a + b;
+
+const sumar2 = (a, b) => {   
+  return a + b; 
+};
