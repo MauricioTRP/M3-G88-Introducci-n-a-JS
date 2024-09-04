@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesión 5 - POO</title>
+</head>
+<body>
+
+  <h1>Ingresa Productos</h1>
+  <form>
+    <div class="form-group">
+      <label for="sku">SKU</label>
+      <input type="text" name="sku" id="sku">
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre Producto</label>
+      <input type="text" name="nombre" id="nombre">
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descipción</label>
+      <input type="text" name="descripcion" id="descripcion">
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio</label>
+      <input type="number" name="precio" id="precio">
+    </div>
+    <div class="form-group">
+      <label for="cc">CC</label>
+      <input type="number" name="cc" id="cc">
+    </div>
+    <div class="form-group">
+      <label for="esAlcoholica">¿Es Alcoholica?</label>
+      <input checked="true" value="true" type="checkbox" name="esAlcoholica" id="esAlcoholica">
+    </div>
+    <div class="form-group">
+      <button type="submit">Agregar</button>
+    </div>
+  </form>
+  
+  <script type="module" src="./assets/js/inventario.mjs"></script>
+</body>
+</html>
