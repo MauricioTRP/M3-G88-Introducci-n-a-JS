@@ -3,6 +3,8 @@ import PrestamoLibro from "./PrestamoLibros.mjs";
 
 /**
  * Obtener datos de la "base de datos"
+ * 
+ * obtiene nuestro DB.json
  */
 
 fetch("./assets/js/DB.json")
@@ -26,7 +28,7 @@ fetch("./assets/js/DB.json")
      */
 
     /**
-     * data.libros es arreglo de libros
+     * data.libros es arreglo de objetos "comunes y corriente"
      */
 
     const libros = data.libros
@@ -47,7 +49,7 @@ fetch("./assets/js/DB.json")
     libros.forEach((libro, idx) => {
       const { title, author } = libro // tomamos título y autor de cada libro
       
-      mensajeParaUsuario += `(${idx + 1}) ${title} - ${author} \n`
+      mensajeParaUsuario += `(${idx + 1}) ${title} - ${author} \n` // \n -> representa salto de línea
     });
     const eleccionUsuario = prompt(mensajeParaUsuario)
   
