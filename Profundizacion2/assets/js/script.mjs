@@ -40,22 +40,46 @@ fetch("./assets/js/DB.json")
     })
   })
   .then( libros => {
-
-    console.log(libros)
-    console.log(libros[0].isValid())
-    
     let mensajeParaUsuario = ''// 
   
-    libros.forEach((libro, idx) => {
+    /**
+     * forEach(callback)
+     * 
+     * callback((elemento, indice) => {
+     *  usamos elemento e indice
+     * })
+     */
+    libros.forEach((libro, indice) => {
       const { title, author } = libro // tomamos título y autor de cada libro
       
-      mensajeParaUsuario += `(${idx + 1}) ${title} - ${author} \n` // \n -> representa salto de línea
+      mensajeParaUsuario += `(${indice + 1}) ${title} - ${author} \n` // \n -> representa salto de línea
     });
-    const eleccionUsuario = prompt(mensajeParaUsuario)
-  
-    // while(eleccionUsuario != 'no') {
-  
-    // }
+
+    /**
+     * Dando la configuración inicial del ciclo
+     */
+    let eleccionUsuario = prompt(mensajeParaUsuario) // primera elección
+    let prestamos // creamos un "indefinido" para los préstamos
+
+    while(eleccionUsuario != null && eleccionUsuario != 'no' ) {
+
+      console.log('¿Está creado el carrito?', !!prestamos)
+
+      if (!libros[eleccionUsuario - 1]) {
+        /** Caso de elección que no existe */
+        alert('No existe éste libro')
+      } else if (!prestamos) {
+        /** Asignamos el "carrito" a la variable prestamos */
+        console.log('En la rama donde se crea carrito')
+        console.log('Creando instancia del carrito')
+        prestamos = new PrestamoLibro(libros[eleccionUsuario - 1])
+      } else {
+        console.log('Aquí agregaremos nuevos libros')
+      }
+      
+      console.log("Carrito con libros, al final de una iteración",prestamos)
+      eleccionUsuario = prompt(mensajeParaUsuario)
+    }
   } )
   
   
