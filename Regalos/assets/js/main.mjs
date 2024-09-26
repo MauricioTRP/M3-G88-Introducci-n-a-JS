@@ -13,7 +13,7 @@ let arrayLimpia = arrayDatos.map((lines) => lines.replace(/x/g, ','))
  */
 
 let total = 0
-const cajasRegalos = arrayLimpia.forEach(dato => {
+arrayLimpia.forEach(dato => {
   let [largo, ancho, alto] = dato.split(',')
   total += new Caja({alto, ancho, largo}).calcularPapel()
 })
@@ -31,7 +31,6 @@ const arrayLimpio = lines.map((line) => {
   return { ancho, largo, alto }
 })
 
-console.log(arrayLimpio)
+const cajasArray = arrayLimpio.map(lados => new Caja(lados))
 
-
-
+console.log(cajasArray.reduce((acc, caja) => acc += caja.calcularCinta(), 0))
