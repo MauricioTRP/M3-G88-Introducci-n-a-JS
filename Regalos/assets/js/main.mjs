@@ -18,6 +18,7 @@ const cajasRegalos = arrayLimpia.forEach(dato => {
   total += new Caja({alto, ancho, largo}).calcularPapel()
 })
 
+console.log(total)
 
 /**
  * Segunda opción de solución
@@ -32,6 +33,5 @@ const arrayLimpio = lines.map((line) => {
 
 console.log(arrayLimpio)
 
-console.log(total)
 
 
